@@ -57,18 +57,18 @@ def redraw_Win():
     elif right:
         win.blit(runr[walkCount//10],(x,y))
         walkCount+=1
-    elif Idle:
-        if idleCount + 1 > 60:
-            idleCount = 0
-        else:
-            win.blit(idle[idleCount//15],(x,y))
-            idleCount+=1
-    else:
+    elif isJump:
         if jumpCount + 1 > 60:
             jumpCount = 0
         else:
             win.blit(jump[jumpCount//15],(x,y))
             jumpCount+=1
+    else:
+        if idleCount + 1 > 60:
+            idleCount = 0
+        else:
+            win.blit(idle[idleCount//15],(x,y))
+            idleCount+=1
 
     pygame.display.update()
 
